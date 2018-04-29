@@ -9,7 +9,7 @@ const ExpenseListItem =  ({history, dispatch, id, description, amount, createdAt
         <h3>{description}</h3>
         </Link>
         <p>
-            {'Amount: ' + numeral(amount/100).format('$0,0.00')}
+            {'Amount: ' + numeral(amount / 100).format('$0,0.00')}
             -
             {'Created at: ' + moment(createdAt).format('MMMM Do, YYYY')}
         </p>
