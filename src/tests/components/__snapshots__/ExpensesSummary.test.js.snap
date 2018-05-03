@@ -2,12 +2,26 @@
 
 exports[`should return ExpenseSummary with 1 expense 1`] = `
 <div>
-  Viewing 1 expense totalling $3.50
+  <h2>
+    Viewing 
+    1
+     
+    expense
+     totalling 
+    $10.00
+  </h2>
 </div>
 `;
 
 exports[`should return ExpenseSummary with multiple expenses 1`] = `
 <div>
-  Viewing 3 expenses totalling $1,143.50
+  <h2>
+    Viewing 
+    13
+     
+    expenses
+     totalling 
+    $193,710,458.23
+  </h2>
 </div>
 `;
