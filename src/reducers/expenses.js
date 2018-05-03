@@ -8,7 +8,7 @@ export default (state = expensesReducerDefaultState, action) => {
             return [
                 ...state,
                 action.expense
-            ]; // does not change state, whereas push does, so to stay pure we use concat
+            ];
         case 'REMOVE_EXPENSE':
             return state.filter(({ id }) => id !== action.id);
         case 'EDIT_EXPENSE':
@@ -22,6 +22,8 @@ export default (state = expensesReducerDefaultState, action) => {
                     return expense;
                 }
             })
+        case 'SET_EXPENSES':
+            return action.expenses;
         default:
             return state;
     }
