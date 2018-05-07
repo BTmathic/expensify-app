@@ -34,7 +34,10 @@ export const removeExpense = (id = '') => ({
 
 export const startRemoveExpense = (props) => {
     // for some reason the data alternates between passing through as a prop or in the data prop...
-    const id = !!props.id ? props.id : props.data.id;
+    let id = props.id;
+    if (!props.id) {
+        id = props.data.id;
+    }
     return (dispatch) => {
         return database.ref(`expenses/${id}`).remove().then(() => {
             dispatch(removeExpense(id));

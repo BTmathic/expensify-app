@@ -1,12 +1,12 @@
 import {
-    startAddExpense,
     addExpense,
+    startAddExpense,
     editExpense,
+    startEditExpense,
     removeExpense,
-    setExpenses,
-    startSetExpenses,
     startRemoveExpense,
-    startEditExpense
+    setExpenses,
+    startSetExpenses
 } from '../../actions/expenses';
 import thunk from 'redux-thunk';
 import expenses from '../fixtures/expenses';
@@ -24,7 +24,7 @@ beforeEach((done) => {
 });
 
 test('should setup remove expense action object', () => {
-    const action = removeExpense({ id: '123abc' });
+    const action = removeExpense('123abc');
     expect(action).toEqual({
         type: 'REMOVE_EXPENSE',
         id: '123abc'
@@ -125,6 +125,7 @@ test('should remove expense from firebase', (done) => {
     const store = createMockStore({});
     const id = expenses[0].id;
     store.dispatch(startRemoveExpense({ id })).then(() => {
+        
         const actions = store.getActions();
         expect(actions[0]).toEqual({
             type: 'REMOVE_EXPENSE',
