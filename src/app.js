@@ -5,8 +5,6 @@ import AppRouter, {history} from './routers/AppRouter'
 import configureStore from './store/configureStore';
 import LoadingPage from './components/LoadingPage';
 import { startSetExpenses } from './actions/expenses';
-import expensesReducer from './reducers/expenses';
-import getVisibleExpenses from './selectors/expenses.js';
 import { login, logout } from './actions/auth';
 
 import 'normalize.css/normalize.css'; // reset all browser conventions
