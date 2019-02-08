@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel public/index.html",
-    "build": "parcel build public/index.html out-dir prod",
+    "build": "parcel build public/index.html --out-dir prod",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
